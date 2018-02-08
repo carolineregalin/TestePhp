@@ -2,12 +2,12 @@
 <html>
     <head>
         <link rel ="stylesheet" href=" <?= base_url($uri = "css/bootstrap.css") ?> " >
-                <link rel="icon" href=" <?= base_url($uri = "img/icone-estabelecimento.ico") ?> "type="image/x-icon" />
+        <link rel ="stylesheet" href=" <?= base_url($uri = "css/estabelecimentos.css") ?> " >
+        <link rel="icon" href=" <?= base_url($uri = "img/icone-estabelecimento.ico") ?> "type="image/x-icon" />     
         <title>Cadastraki - Estabelecimentos</title>
-
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-                crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
 
         <script type="text/javascript" >
 
@@ -75,8 +75,9 @@
 
         </script>
     </head>
-    <body>
+    <body style="background-image: linear-gradient(rgb(104, 145, 162),white);">
         <div class ="container">
+            <div class="card card-container">
             <?php if ($this->session->flashdata("success")): ?>
                 <p class="alert alert-success"><?= $this->session->flashdata("success") ?></p>         
             <?php endif ?>
@@ -85,8 +86,8 @@
                 <p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p>         
             <?php endif ?>
             <?php if (($_SESSION["logado"]) && ($_SESSION["tokenvalidado"])) : ?>
-                <h1>Cadastro</h1>
-                <form  action="estabelecimentos/novo" method="post" enctype="multipart/form-data" id ="formularioEstabelecimentos" name ="formularioEstabelecimentos" autocomplete="off">
+                <h1><small>Cadastro de estabelecimentos</small></h1>
+                <form  action="estabelecimentos/novo" method="post"  class="form-signin" enctype="multipart/form-data" id ="formularioEstabelecimentos" name ="formularioEstabelecimentos" autocomplete="off">
                     <div class="form-group">
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" style="max-width:300px" placeholder="Pizzaria Teti" required minlength="5" class="form-control"/>
@@ -116,7 +117,8 @@
                         <input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar" class= "btn btn-primary"/>
                     </div>
                 </form>
-                <h1>Estabelecimentos</h1>
+                </div>
+            <h1><small>Estabelecimentos</small></h1>
                 <table class="table">
                     <tr>
                         <th>ID estabelecimento</th>
