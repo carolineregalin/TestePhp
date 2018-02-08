@@ -2,9 +2,7 @@
 <html>
     <head>
         <link rel ="stylesheet" href=" <?= base_url($uri = "css/bootstrap.css") ?> " >
-        <link href="../../../css/cssvalidacao.css" rel="stylesheet" type="text/css"/>       
-        <link href="../../../css/style.css" rel="stylesheet" type="text/css"/>
-
+                <link rel="icon" href=" <?= base_url($uri = "img/icone-estabelecimento.ico") ?> "type="image/x-icon" />
         <title>Cadastraki - Estabelecimentos</title>
 
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"
