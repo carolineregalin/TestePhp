@@ -52,12 +52,22 @@ class Base extends CI_Controller {
         if ($this->Tokens_model->IsUniqueToken($token)) {
             $_SESSION["token"] = $token;
             //manda email
+
+
             $this->email->from("cadastraki@gmail.com", 'Cadastraki');
             $this->email->subject("Autenticação de token");
             $this->email->to($_SESSION["email"]);
             $this->email->message($token);
-            $this->email->send();
-            $this->load->view('tokens/index');
+            $status = $this->email->send();
+
+            // Checa o status da operação gravando a mensagem na seção
+            if (!$status) {
+                $this->session->set_flashdata('error', 'Não foi possível enviar o email.');
+            } else {
+                $this->session->set_flashdata('success', 'Email enviado com sucesso.');  
+            }
+           // $this->load->view('tokens/index');
+            
         } else {
             self::EnviarToken();
         }
@@ -99,8 +109,8 @@ class Base extends CI_Controller {
 
         return $randomString;
     }
-    
-      /**
+
+    /**
 
      * Function ValidarToken
 
@@ -112,11 +122,11 @@ class Base extends CI_Controller {
     public function ValidarToken() {
         echo $_SESSION["token"];
         $tokendigitado = $this->input->post("tokendigitado");
-        if ($tokendigitado == $_SESSION["token"]) {   
-            $_SESSION["tokenvalidado"]=TRUE;
-            redirect("index.php/Estabelecimentos");        
+        if ($tokendigitado == $_SESSION["token"]) {
+            $_SESSION["tokenvalidado"] = TRUE;
+            redirect("index.php/Estabelecimentos");
         } else {
-            $_SESSION["tokenvalidado"]=FALSE;
+            $_SESSION["tokenvalidado"] = FALSE;
             redirect("index.php/user_login/logout");
         }
     }

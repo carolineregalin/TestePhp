@@ -15,9 +15,10 @@
     height: 36px;
     -moz-user-select: none;
     -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
+    background-color: rgb(104, 145, 162);
+
 }
+
 
 /*
  * Card component

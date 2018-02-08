@@ -119,15 +119,15 @@
                 </form>
                 </div>
             <h1><small>Estabelecimentos</small></h1>
-                <table class="table">
+                <table class="table table-striped">
                     <tr>
-                        <th>ID estabelecimento</th>
-                        <th>Nome</th>
-                        <th>CEP</th>
-                        <th>UF</th>
-                        <th>Cidade</th>
-                        <th>Bairro</th>
-                        <th>Endereço</th>              
+                        <th bgcolor="#6891a2">ID estabelecimento</th>
+                        <th bgcolor="#6891a2">Nome</th>
+                        <th bgcolor="#6891a2">CEP</th>
+                        <th bgcolor="#6891a2">UF</th>
+                        <th bgcolor="#6891a2">Cidade</th>
+                        <th bgcolor="#6891a2">Bairro</th>
+                        <th bgcolor="#6891a2">Endereço</th>              
                     </tr>
                     <?php if ($estabelecimento == FALSE): ?>
 

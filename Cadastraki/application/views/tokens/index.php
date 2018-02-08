@@ -31,7 +31,7 @@ if (!isset($_SESSION)) {
                                 <input  type="text" class = "form-control" name="tokendigitado" value="<?= set_value('tokendigitado') ?>" required/>
                             </div>
                             <div>
-                                <input type="submit"  value="Validar" rid="validar" name="validar" class= "btn btn-primary"/>
+                                <input type="submit"  value="Validar" rid="validar" name="validar" class= "btn btn-lg btn-primary btn-block btn-signin"/>
                             </div>               
                         </form>
                     </div>
